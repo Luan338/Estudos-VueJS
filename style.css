@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Festive&family=Montserrat:wght@400;900&family=Nunito&family=Nunito+Sans&family=Oswald:wght@200;700&family=Poppins:wght@300;500&family=Quintessential&family=Roboto+Condensed:wght@400;700&family=RocknRoll+One&family=Smooch+Sans:wght@200&family=Spectral:wght@700&family=Vollkorn:wght@500&display=swap');
+
+
+section{
+    background-color: rgb(234, 233, 233);
+    width: 300px;
+    height: 400px;
+    margin: 100px auto;
+    border-radius: 10px;
+    border: 2px solid rgb(1, 1, 54);
+    overflow: hidden;
+}
+
+.contain{
+    background-color: rgb(32, 32, 121);
+    border-radius: 0px 0px 10px 10px;
+}
+
+h2{
+    padding: 40px;
+    font-size: 1.5rem;
+    color: rgb(234, 233, 233);
+    font-family: 'Montserrat', sans-serif;
+}
+
+span{
+    color: rgb(1, 1, 54);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin-left: 5px;
+}
+
+p{
+    color: rgb(32, 32, 121);
+    font-size: 1.1rem;
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.box-button{
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+button{
+    color:white;
+    font-size: 1rem;
+    background-color: rgb(1, 1, 54);
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="../vue.js"></script>
+    <title>V-Bind</title>
+</head>
+<body>
+
+    <!-- O V-Bind é uma diretiva que permite a utilização de expressões dentro de 
+        atributos html. -->
+
+    <section id="app">
+        <a :href="link" target="_blank">Link Google</a>
+        <h2 :class="lorena ? 'verde' : 'vermelho'" >Lorena !</h2>
+        <p :class="cor">Olá, mundo !</p>
+    </section>
+
+    <script>
+        
+        const vm = new Vue({
+            el: "#app",
+            data: {
+                link: "https://www.linkedin.com/in/luan-silva-devweb/",
+                cor: "Azul",
+                lorena: true
+            }
+        })
+
+    </script>
+
+</body>
+</html>

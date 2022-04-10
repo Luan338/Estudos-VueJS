@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
+    <title>Vue.js</title>
+</head>
+<body>
+
+    <section id="app">
+        <div class="contain">
+            <h2>Bermuda Lacoste</h2>
+        </div>
+        <p>Valor: R$<span>{{preco}}</span></p>
+        <p>Quantidade: <span>{{total}}</span></p>
+        <div class="box-button">
+            <button @click="total++">Adicionar</button>
+            <button @click="total--">Remover</button>
+        </div>
+        <p>Total: R$<span>{{preco * total}}</span></p>
+    </section>
+    
+    <script>
+        const vm = new Vue(
+            {
+            el: '#app',
+            data: {
+                preco: 90,
+                total: 0
+            }
+        }
+        );
+    </script>
+</body>
+</html>
