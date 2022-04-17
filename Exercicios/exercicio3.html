@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>Exercício 3</title>
+</head>
+<body>
+
+    <nav id="app">
+        <ul>
+            <li>
+                <a @click.prevent="puxarAcoes" href="https://cloud.iexapis.com/stable/stock/aapl/quote?token=pk_173f25d70ebd42f08916467a914d9c2b">Apple</a>
+            </li>
+            <li>
+                <a @click.prevent="puxarAcoes" href="https://cloud.iexapis.com/stable/stock/googl/quote?token=pk_173f25d70ebd42f08916467a914d9c2b">Google</a>
+            </li>
+            <li>
+                <a @click.prevent="puxarAcoes" href="https://cloud.iexapis.com/stable/stock/amzn/quote?token=pk_173f25d70ebd42f08916467a914d9c2b">Amazon</a>
+            </li>
+            <li>
+                <a @click.prevent="puxarAcoes" href="https://cloud.iexapis.com/stable/stock/ebay/quote?token=pk_173f25d70ebd42f08916467a914d9c2b">Ebay</a>
+            </li>
+            <li>
+                <a @click.prevent="puxarAcoes" href="https://cloud.iexapis.com/stable/stock/pypl/quote?token=pk_173f25d70ebd42f08916467a914d9c2b">Paypal</a>
+            </li>
+        </ul>
+        <div>
+            <h2>{{acao.symbol}}</h2>
+            <p>Empresa: {{acao.companyName}}</p>
+            <p>Valor de marcado: {{acao.marketCap}}</p>
+            <p>Valor da ação: {{acao.latestPrice}}</p>
+        </div>
+    </nav>
+
+    <script>
+      
+      const vm = new Vue({
+          el: "#app",
+          data: {
+              acao: {},
+          },
+          methods: {
+              puxarAcoes(event){
+                const url = event.currentTarget.href;
+                  fetch(url).then(r => r.json()).then(r =>{
+                      this.acao = r;
+                  })
+              }
+          }
+      })
+
+    </script>
+
+</body>
+</html>

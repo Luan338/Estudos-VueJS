@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>V-once</title>
+</head>
+<body>
+
+    <section id="app">
+        <!-- v-once é atualizado apenas uma única vez NÃO MODIFICA -->
+       <h2 v-once >Valor inicial: R${{total - gasto}}</h2>
+       <button @click="gasto += 5" >Comprar Banana R$5</button>
+       <p>Total gasto: {{gasto}}</p>
+       <p>Total final: R$ {{total - gasto}}</p>
+    </section>
+
+    <script>
+        
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                total: 150,
+                gasto: 0
+            },
+        })
+
+    </script>
+
+</body>
+</html>

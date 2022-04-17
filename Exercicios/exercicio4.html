@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>Exercício 4</title>
+</head>
+<body>
+
+    <section id="app">
+        <h1>Banana {{estoqueBanana}}</h1>
+        <button v-show="estoqueBanana > 0" @click="addItem" >+</button>
+        <button v-show="carrinho" @click="removeItem" >-</button>
+        <p>Carrinho: {{carrinho}}</p>
+        <p v-show="estoqueBanana === 0" >Não temos mais banana no estoque.</p>
+    </section>
+ 
+    <script>
+      
+      const vm = new Vue({
+          el: "#app",
+          data: {
+              estoqueBanana: 7,
+              carrinho: 0
+          },
+          methods: {
+              addItem(){
+                this.carrinho++;
+                this.estoqueBanana--;
+              },
+              removeItem(){
+                this.carrinho--;
+                this.estoqueBanana++;
+              }
+          }
+      })
+
+    </script>
+
+</body>
+</html>

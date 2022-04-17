@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>V-html e V-text</title>
+</head>
+<body>
+
+    <section id="app">
+        <div v-html="link"></div>
+        <p>{{fruta}} custa R$ 5,00</p>
+        <p v-text="fruta">custa R$ 5,00</p>
+    </section>
+
+    <script>
+        
+        const vm = new Vue({
+            el: "#app",
+            data:{
+              link: "<a href='https://www.origamid.com'>Origamid</a>",
+              fruta: "Banana"
+            },
+        })
+
+    </script>
+
+</body>
+</html>
