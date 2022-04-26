@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>V-for</title>
+</head>
+<body>
+
+    <section id="app">
+        <ul>
+            <li v-for="item in lista">{{item}}</li>
+        </ul>
+        <button @click="removerItem" >Remover</button>
+        <button @click="moduficarItem" >Modificar</button>
+
+        <!-- <ul>
+            Quando for uma array colocar valor e o index
+            <li v-for="(valor, index) in cursos" >{{valor}} {{index}}</li>
+        </ul> -->
+
+        <!-- Quando for objeto: valor, chave, index 
+        <div v-for="({nome, populacao}, key) in estados">
+            <h2>{{nome}}</h2>
+            <h3>{{populacao}}</h3>
+        </div>-->
+
+        <!-- <ul v-for="(fruta, key) in frutas" :key="key">
+            <li>{{fruta.nome}}</li>
+            <li>{{fruta.cor}}</li>
+            <li>{{key}}</li>
+        </ul>
+        frutas:[
+                    {
+                        nome: "Banana",
+                        cor: "Amarelo"
+                    },
+                    {
+                        nome: "Melância",
+                        cor: "Verde"
+                    },
+                    {
+                        nome: "Morango",
+                        cor: "Vermelho"
+                    },
+
+                ] -->
+
+        <!-- <div v-for="x in 10">
+            {{x}}
+        </div> -->
+    </section>
+
+    <script>
+        
+        const vm = new Vue({
+            el: "#app",
+            data:{
+                lista: ["Item 1", "Item 2", "Item 3" ]
+            //   estados:{
+            //     rj:{
+            //         populacao: "17 Milhões",
+            //         nome: "Rio de Janeiro"
+            //     },
+            //     sp:{
+            //         populacao: "20 Milhões",
+            //         nome: "São Paulo"
+            //     }
+            // }
+        },
+        methods:{
+            removerItem(){
+                this.lista.pop();
+            },
+            moduficarItem(){
+                // Com reatividade  
+                this.$set(this.lista, 0, "Banana")
+
+                // Sem reatividade
+                //this.lista[0] = "Banana"
+            }
+        }
+        })
+
+    </script>
+
+</body>
+</html>
