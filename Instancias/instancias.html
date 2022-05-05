@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>Instâncias</title>
+</head>
+<body>
+
+    <section id="app1">
+        <h1>{{ferramenta}}</h1>
+        <button @click="trocar('Martelo')">Mudar</button>
+    </section>
+
+    <section id="app2">
+        <h1>{{ferramenta}}</h1>
+        <button @click="trocar('Furadeira')">Mudar</button>
+    </section>
+
+    <script>
+        const vm1 = new Vue({
+            el: "#app1",
+           data: {
+            ferramenta: "Furadeira"
+           },
+           methods:{
+               trocar(ferramenta){
+                this.ferramenta = ferramenta;
+               }
+           }
+        });
+
+        const vm2 = new Vue({
+            el: "#app2",
+            data: {
+            ferramenta: "Martelo"
+           },
+           methods:{
+               trocar(ferramenta){
+                this.ferramenta = ferramenta;
+               }
+           }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../vue.js"></script>
+    <title>Lado, Perímetro e Área</title>
+</head>
+<body>
+
+    <section id="app">
+        <h2>Lado: {{lado}}</h2>
+        <h2>Perímetro: {{lado * 4}}</h2>
+        <h2>Área: {{lado * lado}}</h2>
+    </section>
+ 
+    <script>
+      
+      const vm = new Vue({
+          el: "#app",
+          data: {
+              lado: 10
+          },
+      })
+
+    </script>
+
+</body>
+</html>
