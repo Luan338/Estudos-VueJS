@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>Classes e Styles</title>
+  </head>
+  <body>
+    <section id="app1">
+      <h1 :class="[cor, {fundo: back}]">Texto Azul</h1>
+      <button @click="back = !back" :style="styleButton">Trocar Fundo</button>
+      <h1 :class="{corPurple: purple}" :style="estiloParagraph">Texto Azul</h1>
+      <button @click="purple = !purple" :style="styleButton">Trocar cor</button>
+
+      <h2
+        :style="{background: bgColor, fontSize: fontSize + 'px', color: corText, padding: space }"
+      >
+        Estilize Ele
+      </h2>
+      <button @click="fontSize++" :style="styleButton">Aumentar</button>
+      <button @click="fontSize--" :style="styleButton">Diminuir</button>
+    </section>
+
+    <script>
+      const vm1 = new Vue({
+        el: "#app1",
+        data: {
+          cor: "blue",
+          purple: true,
+          back: true,
+          bgColor: "purple",
+          fontSize: 10,
+          corText: "white",
+          space: "2rem",
+
+          styleButton: {
+            color: "white",
+            background: "blue",
+            border: "none",
+            fontSize: ".8rem",
+            padding: ".5rem",
+            borderRadius: "5px",
+            cursor: "pointer",
+          },
+        },
+        computed: {
+          estiloParagraph() {
+            const tamanho = Math.random() * 100;
+            return {
+              fontSize: tamanho + "px",
+            };
+          },
+        },
+      });
+    </script>
+
+    <style>
+      .blue {
+        color: blue;
+      }
+
+      .corPurple {
+        color: purple;
+      }
+
+      .fundo {
+        background-color: yellow;
+      }
+    </style>
+  </body>
+</html>
