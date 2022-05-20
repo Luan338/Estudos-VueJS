@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>Exercício V-Model</title>
+  </head>
+  <body>
+    <section id="app">
+      <label for="background">background</label>
+      <input id="background" type="color" v-model="estiloBotao.background" />
+
+      <label for="width">Width</label>
+      <input id="width" type="text" v-model="estiloBotao.width" />
+
+      <label for="height">Height</label>
+      <input id="height" type="text" v-model="estiloBotao.height" />
+
+      <label for="border">Border</label>
+      <input id="border" type="text" v-model="estiloBotao.border" />
+
+      <label for="borderRadius">Border-Radius</label>
+      <input id="borderRadius" type="text" v-model="estiloBotao.borderRadius" />
+
+      <label for="display">Display</label>
+      <input id="display" type="text" v-model="estiloBotao.display" />
+
+      <label for="align">Align-Items</label>
+      <input id="align" type="text" v-model="estiloBotao.justifyContent" />
+
+      <label for="just">Justify-content</label>
+      <input id="just" type="text" v-model="estiloBotao.alignItems" />
+
+      <a :style="estiloBotao" href="#">Clique aqui</a>
+    </section>
+
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          estiloBotao: {
+            background: "",
+            width: "0px",
+            height: "0px",
+            border: "",
+            borderRadius: "0px",
+            display: "",
+            justifyContent: "",
+            alignItems: "",
+          },
+        },
+      });
+    </script>
+
+    <style>
+      label,
+      a {
+        display: block;
+        margin-top: 2.5rem;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 1.5rem;
+        color: brown;
+        display: block;
+      }
+    </style>
+  </body>
+</html>

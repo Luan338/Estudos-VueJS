@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>V-Model</title>
+  </head>
+  <body>
+    <section id="app">
+      <!-- V-MODEL -->
+      <!-- <input type="text" v-model="nome" /> -->
+
+      <!-- :VALUE -->
+      <!-- <input type="email" :value="email" /> -->
+
+      <!-- MODIFIERS -->
+
+      <!-- LAZY -->
+      <input type="text" v-model.lazy="nome" placeholder="Nome de Usuário" />
+      <br />
+      <br />
+
+      <!-- trim -->
+      <input type="text" v-model.trim="email" placeholder="E-mail" />
+      <br />
+      <br />
+
+      <!-- NUMBER -->
+      <input
+        type="text"
+        v-model.number="idade"
+        placeholder="Digite sua idade"
+      />
+
+      <h2>nome: {{nome}}</h2>
+      <h2>e-mail: {{email}}</h2>
+      <h2>Idade: {{idade}}</h2>
+    </section>
+
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          nome: "",
+          email: "",
+          idade: 0,
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>{{this.$contador}}</title>
+  </head>
+  <body>
+    <section id="app">
+      <ol>
+        <li v-for="(valor, chave) in github">{{chave}}: {{valor}}</li>
+      </ol>
+      <button @click="contador++">Adicionando: {{contador}}</button>
+    </section>
+
+    <script>
+      const vm = new Vue({
+        el: "#app",
+        data: {
+          contador: 0,
+          github: {},
+        },
+        methods: {
+          ativarGithub() {
+            fetch("https://api.github.com/users/origamid")
+              .then((r) => r.json())
+              .then((r) => {
+                this.github = r;
+              });
+          },
+        },
+        updated() {
+          document.title = this.contador;
+        },
+        created() {
+          this.ativarGithub();
+        },
+      });
+    </script>
+  </body>
+</html>
