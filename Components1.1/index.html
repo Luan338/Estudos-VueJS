@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../vue.js"></script>
+    <title>Components 1.1</title>
+  </head>
+  <body>
+    <div id="app">
+      <component-global></component-global>
+      <component-local></component-local>
+      <component-local2></component-local2>
+    </div>
+
+    <script>
+      // COMPONENT LOCAL
+      const ComponentLocal = {
+        name: "ComponentLocal",
+        template: `<p>Esse é o Component Local</p>`,
+      };
+
+      const ComponentLocal2 = {
+        name: "ComponentLocal2",
+        template: `<p>Esse é o Component Local 2</p>`,
+      };
+
+      // COMPONENT GLOBAL
+      Vue.component("ComponentGlobal", {
+        template: `<p>Esse é o Component Global</p>`,
+      });
+
+      const vm = new Vue({
+        el: "#app",
+        components: {
+          ComponentLocal,
+          ComponentLocal2,
+        },
+      });
+    </script>
+  </body>
+</html>
